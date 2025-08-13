@@ -266,131 +266,132 @@ metadata:
 
 ###  Squelette complet conceptuel du Repository
 SMQ-focal-PARA
-├── README.md # Présentation projet, manifeste & principes fondateurs
-├── manifestes/ # Manifestes et principes fondateurs
-│ ├── manifeste_pro_focal.md
-│ ├── principes_clefs.md
-│ ├── fusion_conceptuelle.md # Spécification de la fusion des approches
-├── docs/ # Documentation technique et guides
-│ ├── normes/
-│ │ ├── liste_normes.md # Liste des normes applicables
-│ │ ├── tableau_conformite_secteurs.md # Conformité par secteur
-│ │ ├── checklists/ # Listes de vérification par norme
-│ │ │ ├── 14971_2019.md
-│ │ │ ├── 62304_2015_class_a.md
-│ │ │ ├── FDA_CYBER_2018.md
-│ │ │ └── ... # Autres variantes normatives
-│ ├── integration/ # Guides d'intégration CI/CD et outils
-│ │ ├── workflow_ci_cd.md
-│ │ ├── integration_Docker.md
-│ │ └── guides_outils.md
-│ ├── modèles_docs/ # Modèles de documentation
-│ │ ├── template_pandoc_docx.md
-│ │ ├── template_pandoc_pdf.md
-│ │ └── template_audit.md
-│ ├── extension_markdown/ # Extensions markdown spécifiques
-│ │ └── md_extensions.md
-├── .github/ # GitHub workflows et templates
-│ ├── workflows/
-│ │ ├── ci_cd_pipeline.yml
-│ │ ├── quality_check.yml
-│ │ ├── heatmap_auto_gen.yml
-│ │ └── chatbot_dispatch.yml
-│ ├── ISSUE_TEMPLATE/ # Templates pour la gestion des issues
-│ │ ├── non_conformite.md
-│ │ └── suivi_thermique.md
-│ └── PULL_REQUEST_TEMPLATE.md # Template pour les pull requests
-├── quality/ # Outils de gestion de la qualité
-│ ├── suivi_thermique/
-│ │ ├── heatmap_table.html
-│ │ ├── zones_chaudes.md
-│ │ ├── analytics_dashboards/
-│ │ │ └── heatmap_live.json
-│ │ └── exemples_tickets.md
-│ ├── audits/ # Audits internes et externes
-│ │ ├── audit_interne_xx.md
-│ │ └── audit_externe_checklist.md
-│ ├── kpi_conformite.md # Indicateurs de conformité
-│ ├── risk_management_plan.md # Plan de gestion des risques
-│ └── gaps_analysis.md # Analyse des manques (gaps)
-├── hardware/ # Conception matérielle
-│ ├── design/ # Diagrammes et schémas électroniques
-│ │ ├── block_diagram.svg
-│ │ ├── schematic.pdf
-│ │ └── bom.csv # Liste des matériaux (BOM)
-│ ├── safety/ # Sécurité des équipements
-│ │ ├── requirements_60601.md
-│ │ ├── risk_assessment.xlsx
-│ │ ├── compliance_matrix_60601.md
-│ │ └── test_plan_60601.md
-│ ├── tests/ # Tests et certificats
-│ │ ├── lab_certificates/
-│ │ │ ├── TUV_report.pdf
-│ │ │ └── Intertek_certificate.pdf
-│ │ ├── internal_tests/
-│ │ │ └── insulation_test_log.csv
-│ └── evidence/ # Preuves de conformité
-│ ├── oscilloscope_readings/
-│ ├── thermal_images/
-│ └── label_photos/
-├── software/ # Développement logiciel
-│ ├── src/ # Code source et firmware
-│ │ └── module_batterie_firmware/
-│ │ ├── main.c
-│ │ ├── drivers/
-│ │ └── tests/
-│ ├── docs/ # Conformité logicielle
-│ │ └── IEC_62304_compliance_matrix.md
-│ └── metadata/ # Méta-données du logiciel
-│ ├── crash_report.yaml
-│ └── thermal_status.yaml
-├── init/ # Initialisation du projet
-│ ├── Dockerfile
-│ ├── docker-compose.yml
-│ ├── Makefile
-│ ├── .gitignore
-│ ├── config/
-│ ├── data/
-│ ├── images/
-│ ├── documents/
-│ └── template/
-├── hooks/ # Hooks Git pour la conformité
-│ ├── commit-msg
-│ ├── pre-commit
-│ ├── pre-push
-│ └── ... # Scripts divers pour conformité
-├── scripts/ # Scripts utilitaires
-│ ├── export_data.py
-│ ├── generate_heatmap.py
-│ ├── sync_obsidian.py
-│ ├── auto_versioning.py
-│ ├── collect.py
-│ ├── gaps.py
-│ ├── render.py
-│ ├── translate.py
-│ └── util.py
-├── ai_agents/ # Agents d'intelligence artificielle
-│ ├── focal_iso_agent.py # Rappels contextuels IA
-│ ├── qualitibot_agent.py # Veille réglementaire IA
-│ ├── botaudit_agent.py # Audit interne/externe IA
-│ └── integration_tests.py
-├── data/ # Données du projet
-│ ├── thermal_states.json
-│ ├── project_kpis.json
-│ ├── risk_register.csv
-│ ├── evidence/
-│ └── compliance_reports/
-├── test_formatters/ # Formatage des tests
-│ └── format_tests.py
-├── project_management/ # Gestion de projet
-│ ├── roadmaps/
-│ ├── milestones/
-│ └── tickets/
-├── version/ # Suivi de version
-│ ├── version.md
-│ ├── changelog.md
-│ └── metadata.yaml
-└── LICENSE # Licence du projet
+├── README.md                     # Présentation du projet, manifeste & principes fondateurs
+├── manifestes/                   # Manifestes et principes fondateurs
+│   ├── manifeste_pro_focal.md    # Manifeste du projet
+│   ├── principes_clefs.md        # Principes clés du projet
+│   ├── fusion_conceptuelle.md    # Spécifications de la fusion des approches
+├── docs/                          # Documentation technique et guides
+│   ├── normes/                   # Liste des normes et checklists
+│   │   ├── liste_normes.md       # Liste des normes applicables
+│   │   ├── tableau_conformite_secteurs.md  # Conformité par secteur
+│   │   ├── checklists/           # Listes de vérification par norme
+│   │   │   ├── 14971_2019.md
+│   │   │   ├── 62304_2015_class_a.md
+│   │   │   ├── FDA_CYBER_2018.md
+│   │   │   └── ...               # Autres variantes normatives
+│   ├── integration/              # Guides d'intégration CI/CD et outils
+│   │   ├── workflow_ci_cd.md     # Pipeline d'intégration continue et déploiement
+│   │   ├── integration_Docker.md # Intégration avec Docker
+│   │   └── guides_outils.md      # Autres outils d'intégration
+│   ├── modèles_docs/             # Modèles de documentation pour Pandoc
+│   │   ├── template_pandoc_docx.md
+│   │   ├── template_pandoc_pdf.md
+│   │   └── template_audit.md     # Modèle de rapport d'audit
+│   ├── extension_markdown/       # Extensions markdown spécifiques
+│   │   └── md_extensions.md      # Liste des extensions Markdown utilisées
+├── .github/                      # GitHub workflows et templates
+│   ├── workflows/                # Fichiers de configuration pour les actions GitHub
+│   │   ├── ci_cd_pipeline.yml
+│   │   ├── quality_check.yml
+│   │   ├── heatmap_auto_gen.yml
+│   │   └── chatbot_dispatch.yml
+│   ├── ISSUE_TEMPLATE/           # Templates pour la gestion des issues GitHub
+│   │   ├── non_conformite.md
+│   │   └── suivi_thermique.md
+│   └── PULL_REQUEST_TEMPLATE.md  # Template pour les pull requests
+├── quality/                      # Outils de gestion de la qualité
+│   ├── suivi_thermique/          # Suivi des températures et analyse thermique
+│   │   ├── heatmap_table.html
+│   │   ├── zones_chaudes.md
+│   │   ├── analytics_dashboards/ # Tableaux de bord d'analyse thermique
+│   │   │   └── heatmap_live.json
+│   │   └── exemples_tickets.md   # Exemples de tickets pour anomalies thermiques
+│   ├── audits/                   # Audits internes et externes
+│   │   ├── audit_interne_xx.md
+│   │   └── audit_externe_checklist.md
+│   ├── kpi_conformite.md         # Indicateurs de conformité
+│   ├── risk_management_plan.md   # Plan de gestion des risques
+│   └── gaps_analysis.md          # Analyse des manques (gaps)
+├── hardware/                     # Conception matérielle
+│   ├── design/                   # Diagrammes électroniques et schémas
+│   │   ├── block_diagram.svg
+│   │   ├── schematic.pdf
+│   │   └── bom.csv               # Liste des matériaux (BOM)
+│   ├── safety/                   # Sécurité des équipements
+│   │   ├── requirements_60601.md # Exigences de sécurité 60601
+│   │   ├── risk_assessment.xlsx  # Évaluation des risques
+│   │   ├── compliance_matrix_60601.md # Matrice de conformité 60601
+│   │   └── test_plan_60601.md    # Plan de test 60601
+│   ├── tests/                    # Tests et certificats
+│   │   ├── lab_certificates/     # Certificats des laboratoires
+│   │   │   ├── TUV_report.pdf
+│   │   │   └── Intertek_certificate.pdf
+│   │   ├── internal_tests/       # Tests internes
+│   │   │   └── insulation_test_log.csv
+│   └── evidence/                 # Preuves de conformité
+│       ├── oscilloscope_readings/
+│       ├── thermal_images/
+│       └── label_photos/
+├── software/                     # Développement logiciel
+│   ├── src/                      # Code source et firmware
+│   │   └── module_batterie_firmware/
+│   │       ├── main.c
+│   │       ├── drivers/
+│   │       └── tests/
+│   ├── docs/                     # Conformité logicielle
+│   │   └── IEC_62304_compliance_matrix.md
+│   └── metadata/                 # Méta-données du logiciel
+│       ├── crash_report.yaml
+│       └── thermal_status.yaml
+├── init/                         # Fichiers d'initialisation du projet
+│   ├── Dockerfile
+│   ├── docker-compose.yml
+│   ├── Makefile
+│   ├── .gitignore
+│   ├── config/
+│   ├── data/
+│   ├── images/
+│   ├── documents/
+│   └── template/
+├── hooks/                        # Git hooks pour garantir la conformité
+│   ├── commit-msg
+│   ├── pre-commit
+│   ├── pre-push
+│   └── ...                       # Autres hooks de conformité
+├── scripts/                      # Scripts utilitaires
+│   ├── export_data.py
+│   ├── generate_heatmap.py
+│   ├── sync_obsidian.py
+│   ├── auto_versioning.py
+│   ├── collect.py
+│   ├── gaps.py
+│   ├── render.py
+│   ├── translate.py
+│   └── util.py
+├── ai_agents/                    # Agents d'intelligence artificielle
+│   ├── focal_iso_agent.py        # Rappels contextuels IA
+│   ├── qualitibot_agent.py       # Veille réglementaire IA
+│   ├── botaudit_agent.py         # Audit interne/externe IA
+│   └── integration_tests.py
+├── data/                         # Données du projet
+│   ├── thermal_states.json
+│   ├── project_kpis.json
+│   ├── risk_register.csv
+│   ├── evidence/
+│   └── compliance_reports/
+├── test_formatters/              # Formatage des tests
+│   └── format_tests.py
+├── project_management/           # Gestion de projet
+│   ├── roadmaps/
+│   ├── milestones/
+│   └── tickets/
+├── version/                      # Suivi de version
+│   ├── version.md
+│   ├── changelog.md
+│   └── metadata.yaml
+└── LICENSE                       # Licence du projet
+
 
 Notices:
 1. Documentation & Manifeste

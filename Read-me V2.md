@@ -263,6 +263,31 @@ metadata:
 <table style="border-collapse: collapse; font-family: sans-serif; font-size: 0.9em; width: 100%; text-align: center; border: 1px solid #ccc;"> <thead> <tr style="background-color: #f2f2f2;"> <th style="border: 1px solid #ccc; padding: 6px;">💣</th> <th style="border: 1px solid #ccc; padding: 6px;">Code TU</th> <th style="border: 1px solid #ccc; padding: 6px;">Activité terrain</th> <th style="border: 1px solid #ccc; padding: 6px;">FW</th> <th style="border: 1px solid #ccc; padding: 6px;">ELEC</th> <th style="border: 1px solid #ccc; padding: 6px;">INT</th> <th style="border: 1px solid #ccc; padding: 6px;">SYS</th> </tr> </thead> <tbody> <tr> <td></td> <td>ELEC-JBD-Design-r1</td> <td>Design HW (schéma, PCB, contraintes)</td> <td style="background-color: #85C1E9;">2</td> <td style="background-color: #E67E22; color: white;">8</td> <td style="background-color: #3498DB; color: white;">4</td> <td style="background-color: #F7DC6F;">5</td> </tr> <tr> <td></td> <td>ELEC-JBD-TestUnitaire-r1</td> <td>Test carte en banc</td> <td style="background-color: #F7DC6F;">5</td> <td style="background-color: #F39C12; color: white;">7</td> <td style="background-color: #F7DC6F;">5</td> <td style="background-color: #F39C12; color: white;">7</td> </tr> <tr> <td style="font-size: 1.5em;"></td> <td>ELEC-JBD-RiskAssessment-r1</td> <td>Analyse de risque technique multi-domaine</td> <td style="background-color: #F4D03F;">6</td> <td style="background-color: #E74C3C; color: white;">9</td> <td style="background-color: #F4D03F;">6</td> <td style="background-color: #E67E22; color: white;">8</td> </tr> <tr> <td style="font-size: 1.5em;"></td> <td>ELEC-JBD-DocNormative-r1</td> <td>Justification technique (preuves HW)</td> <td style="background-color: #E74C3C; color: white;">9</td> <td style="background-color: #CB4335; color: white;">8</td> <td style="background-color: #F5B041;">5</td> <td style="background-color: #D35400; color: white;">7</td> </tr> <tr> <td style="font-size: 1.5em;">💣</td> <td>ELEC-JBD-IntegrationSupport-r1</td> <td>Debug carte avec FW et IHM</td> <td style="background-color: #3498DB; color: white;">4</td> <td style="background-color: #F4D03F;">6</td> <td style="background-color: #E67E22; color: white;">8</td> <td style="background-color: #E67E22; color: white;">8</td> </tr> <tr> <td></td> <td>ELEC-JBD-ComplianceReporting-r1</td> <td>Reporting conformité / suivi des écarts</td> <td style="background-color: #85C1E9;">2</td> <td style="background-color: #AED6F1;">3</td> <td style="background-color: #F7DC6F;">5</td> <td style="background-color: #F39C12; color: white;">7</td> </tr> <tr> <td style="font-size: 1.5em;">💣</td> <td>ELEC-JBD-BringUp-r1</td> <td>Première mise sous tension & validation comportementale</td> <td style="background-color: #F39C12; color: white;">7</td> <td style="background-color: #E67E22; color: white;">8</td> <td style="background-color: #E74C3C; color: white;">9</td> <td style="background-color: #F39C12; color: white;">7</td> </tr> <tr> <td style="font-size: 1.5em;">💣</td> <td>ELEC-JBD-EMC-Debug-r1</td> <td>Résolution problème CEM / bruits</td> <td style="background-color: #3498DB; color: white;">4</td> <td style="background-color: #E74C3C; color: white;">9</td> <td style="background-color: #F4D03F;">6</td> <td style="background-color: #E67E22; color: white;">8</td> </tr> <tr> <td></td> <td>ELEC-JBD-FWUpgradeSupport-r1</td> <td>Support update FW sur système cible</td> <td style="background-color: #F4D03F;">6</td> <td style="background-color: #AED6F1;">3</td> <td style="background-color: #F39C12; color: white;">7</td> <td style="background-color: #F39C12; color: white;">7</td> </tr> <tr> <td></td> <td>ELEC-JBD-ReviewCross-r1</td> <td>Revue croisée HW / FW / INT</td> <td style="background-color: #F7DC6F;">5</td> <td style="background-color: #F4D03F;">6</td> <td style="background-color: #F7DC6F;">5</td> <td style="background-color: #F4D03F;">6</td> </tr> <tr> <td></td> <td>ELEC-JBD-ExplorationAlim-r1</td> <td>Analyse instabilités & optimisation régulateurs</td> <td style="background-color: #F4D03F;">6</td> <td style="background-color: #E74C3C; color: white;">9</td> <td style="background-color: #F7DC6F;">5</td> <td style="background-color: #F4D03F;">6</td> </tr> </tbody> </table>
 
 
+# SMQ-focal-PARA - Configuration CI/CD
+
+## Structure du Projet
+
+```plaintext
+SMQ-focal-PARA
+├── README.md                     # Présentation du projet, manifeste & principes fondateurs
+├── .github/                      # GitHub workflows et templates
+│   ├── workflows/                # Fichiers pour GitHub Actions
+│   │   ├── ci_cd_pipeline.yml    # Pipeline CI/CD
+│   │   ├── quality_check.yml     # Vérifications qualité automatisées
+│   │   └── heatmap_auto_gen.yml  # Génération automatique de la carte thermique
+│   ├── ISSUE_TEMPLATE/           # Templates pour la gestion des issues
+│   ├── PULL_REQUEST_TEMPLATE.md  # Template pour les pull requests
+├── init/                         # Fichiers d'initialisation du projet
+│   ├── Dockerfile                # Configuration Docker pour le projet
+│   ├── docker-compose.yml        # Compose multi-conteneurs pour Docker
+├── scripts/                      # Scripts utilitaires pour CI/CD
+│   ├── generate_heatmap.py       # Génération de la heatmap thermique
+│   ├── auto_versioning.py        # Gestion automatique des versions
+│   └── export_data.py            # Exportation des données
+└── LICENSE                       # Licence du projet
+
+
+
 
 ###  Squelette complet conceptuel du Repository
 SMQ-focal-PARA
